@@ -64,7 +64,7 @@ end
 
 
 def generate_gossip
-  Gossip.destroy_all
+  GossipCool.destroy_all
   i = 0
   while i < 20
     GossipCool.create(
@@ -83,7 +83,7 @@ def generate_gossip_tag
   while i < 10
     GossipTag.create(
       tag_id: Tag.order("RANDOM()").limit(1).ids[0],
-      gossip_id: GossipCool.order("RANDOM()").limit(1).ids[0]
+      gossip_cool_id: GossipCool.order("RANDOM()").limit(1).ids[0]
     )
     i += 1
   end
